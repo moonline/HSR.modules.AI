@@ -110,12 +110,16 @@ urlcolor=black
 \tableofcontents
 \clearpage
 
-\chapter{Mathematica}
+\chapter{Einführung Künstliche Intelligenz}
 
 \expl{Periodische Dezimalzahl}{Lässt sich immer durch einen Bruch darstellen \newline
 $q=\frac{z_{1} \in \mathbb{Z}}{z_{2} \in \mathbb{Z}\\\{0\}}$}
 
-\definition{Künstliche Intelligenz}{Ist immer ein Modell der Wirklichkeit}
+\definition{Künstliche Intelligenz}{Ist immer ein Modell der Wirklichkeit und damit eine grosse Optimierungsaufgabe. \\ $Objekt \rightarrow Modell \rightarrow Simulation (+Rauschen)$}
+
+
+\definition{Antinomie}{Konflikt, der nicht lösbar ist, bsp. Barbier, der nur Leuten den Bart schneidet, die sich selbst nicht den Bart schneiden \ra Konflikt mit sich selbst}
+
 
 
 
