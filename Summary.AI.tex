@@ -110,7 +110,7 @@ urlcolor=black
 \tableofcontents
 \clearpage
 
-\chapter{Einführung Künstliche Intelligenz}
+\ch{Einführung Künstliche Intelligenz}
 
 \expl{Periodische Dezimalzahl}{Lässt sich immer durch einen Bruch darstellen \newline
 $q=\frac{z_{1} \in \mathbb{Z}}{z_{2} \in \mathbb{Z}\\\{0\}}$}
@@ -119,6 +119,76 @@ $q=\frac{z_{1} \in \mathbb{Z}}{z_{2} \in \mathbb{Z}\\\{0\}}$}
 
 
 \definition{Antinomie}{Konflikt, der nicht lösbar ist, bsp. Barbier, der nur Leuten den Bart schneidet, die sich selbst nicht den Bart schneiden \ra Konflikt mit sich selbst}
+
+\img{img/v2.1.jpg}{}{0.75}{}
+\expl{Lernen}{Modelloptimierung durch finden optimaler Parameter.}
+
+\ul
+	\li Dame oder Schach erste Anwendungen von KI \ra finden einer optimalen Strategie.
+	\li Robotik
+	\li Expertensysteme (Nachbildung von Spezialwissen)
+	\li Maschinelles Lernen (Konstruktion neues Wissen anhand Vorhandenem)
+	\li Computerbeweise (Herleitung / Verifizierung mathematischer Formeln)
+	\li Automatisches Programmieren
+	\li Spracherkennung
+\ulE
+
+\expl{Aspekte der KI}{Information und Algorithmen (Verändern der geg. Informationen)}
+
+\ch{Modellbildung}
+\expl{Berechnen}{Beim Berechnen wird immer Information vernichtet \ra PC wird heiss, Energie von Bits wird ``vernichtet''.}
+Modell verformt die Wirklichkeit \ra desto einfach das Modell, desto stärker die Verformung
+
+\expl{Satz von Gödel}{Systeme, die versuchen alles zu beschreiben (axiomatisches System) führen zu einem Wiederspruch in sich selbst.}
+
+\expl{Spiel}{Ein Spiel ist bereits ein Modell und findet in unseren Köpfen statt.}
+
+
+\se{Graphische Methoden und Spieltheorie}
+\img{img/v2.2.jpg}{Gerichteter Graph mit Sprague-Grundy Bewertung}{0.25}{}
+
+\img{img/v2.3.jpg}{Rangverteilung für die Spiele Aa und Ab (links) und Rangverteilung für die Spiele
+Ba und Bb (rechts)}{0.75}{}
+
+\sse{NIM Summe}
+\definition{NIM Summe}{Die NIM-Summe von zwei nat"urlichen Zahlen ist definiert als die bin"are Addition
+ohne Mitnahme des Ubertragungsbits (dh. die XOR Bildung). Also: (xm, ..., xo )z(ym, .., yo ) = (zm , .., zo), wobei zi = xi + yi mod (2).}
+
+\img{img/v2.4.jpg}{Wir bezeichnen mit z die NIM-Summe = Sprague-Grundy Rang, welcher zu zwei Zahlen (Spalten- und Zeilennummer a, b ) gehört, also azb = c.}{0.75}{}
+ Eigenschaften:
+ \ul
+ 	\li Assoziativität: (az(bzc)) = (azb)zc
+ 	\li Kommutativität: azb = bza
+ 	\li 0 als Identität: 0zb = b
+ 	\li Inversit at: aza = 0
+\ulE
+
+5,7,7:
+\ol
+	\li Ausgangslage (Binäre Zeilennummer/Haufenanzahl): \\
+		101 \\
+		111 \\
+		111 \\
+		----- \\
+		101
+	\li Ich ziehe auf Gewinnerposition (Rang 0): \\
+		001 \\
+		111 \\
+		111 \\
+		-----\\
+		000
+\olE
+Zeilen (\#Hölzchenhaufen, Dimensionen bei Gitter) werden xor verknüpft.
+
+\sse{Matrixen}
+Jeder Graph kann als Matrix dargestellt werden. \ra Nachbarschaftsmatrix \\
+Spalten: von, Zeilen: nach
+\ul
+	\li quadratische Matrix: nichtnegative Matrix
+	\li reguläre Matrix: alle Einträge A\^k sin dpositiv
+\ulE
+
+%Skizze s2.1
 
 
 
