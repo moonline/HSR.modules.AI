@@ -154,7 +154,7 @@ Ba und Bb (rechts)}{0.75}{}
 \definition{NIM Summe}{Die NIM-Summe von zwei nat"urlichen Zahlen ist definiert als die bin"are Addition
 ohne Mitnahme des Ubertragungsbits (dh. die XOR Bildung). Also: (xm, ..., xo )z(ym, .., yo ) = (zm , .., zo), wobei zi = xi + yi mod (2).}
 
-\img{img/v2.4.jpg}{Wir bezeichnen mit z die NIM-Summe = Sprague-Grundy Rang, welcher zu zwei Zahlen (Spalten- und Zeilennummer a, b ) gehört, also azb = c.}{0.75}{}
+\img{img/v2.4.jpg}{Wir bezeichnen mit z die NIM-Summe = Sprague-Grundy Rang, welcher zu zwei Zahlen (Spalten- und Zeilennummer a, b ) gehört, also azb = c. \ra Wichtig: a und b beziehen sich auf die Ränge (0...x-1) und nicht Matrixenzeilen/spaltennummer (1...x)}{0.75}{}
  Eigenschaften:
  \ul
  	\li Assoziativität: (az(bzc)) = (azb)zc
@@ -190,6 +190,40 @@ Spalten: von, Zeilen: nach
 
 %Skizze s2.1
 
+
+\ch{Repetition}
+Fehler kann nie null sein, aber kann möglichst klein sein.
+
+\expl{Strategie}{Definiert, wie minimaler Fehler erreicht werden kann.}
+
+\expl{Sprague-Grundi-Ränge (Spieltheorie)}{Felder werden mit möglichst kleiner Zahl ausgefüllt, die nicht schon in einem direkten Nachfolgefeld steht. \\ \ra wenn ich auf einem Rang-0 Feld bin, kann der Andere nur auf eine Nicht-0 Zahl ziehen. Danach kann ich entweder auf die Endnull oder ein anderes 0-Feld ziehen. \\ \textbf{\ra Zyklen dürfen nicht vorkommen}}
+
+\expl{NIM-Spiel}{Durch XOR Verknüpfung der Binären Haufenanzahl werden 0-Positionen ermittelt}
+
+\expl{Matrixendarstellung von Graphen}{\ol 
+	\li Durchnummerieren der Knoten 
+	\li erstellen einer Adjazenzmatrix (Nachbarschaftsmatrix) die n*n Felder besitzt (n=\#Knoten) 
+	\li Die Kanten werden als von-zu mit 1 in der Matrix eingetragen 
+\olE
+
+Durch multiplizieren eines Punktes mit sich selbst \ra Wenn es eine Einheitsmatrix gibt, ist der Graph nicht zusammenhängend
+}
+Punkt mit sich selbst multiplizieren (Mathematica):
+\begin{verbatim}
+A = {{1,0}{1,1}};
+A.A
+{{1,0}{2,1}};
+A.A.A.A.A
+\end{verbatim}
+
+\expl{Reguläre Matrix}{Von jedem Punkt aus ist jeder Punkt erreichbar.}
+
+
+\ch{Lineare Optimierungen}
+
+
+
+\ch{Quadratische Optimierungen}
 
 
 
