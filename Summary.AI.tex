@@ -281,6 +281,83 @@ Desto grösser a gewählt wird, desto aprupter wechselt die Funktion die Richtun
 Die Gleichung eines Werbos Perzeptrons ist gleich der Gleichung eines Kegelschnittes / Parabel: $3x_1+2x_2+7x_1*x_x2-3=0$
 
 
+\ch{Neuronale Netze}
+\img{img/v7.1.jpg}{Neuronale Netze mit Zwischenschichten}{0.5}{}
+\sse{Kortex}
+\img{img/v7.2.jpg}{Kortex Schichten: 6 Schichten(5 sichtbar)}{0.5}{}
+Jeder Layer ist ein in sich funktionierendes Neuronales Netz. Der Körper braucht zwei Schichten, um Eingaben zu verarbeiten und Ausgaben zu steuern.
+
+\img{img/v7.3.jpg}{konvexe Akzeptanzgebiete}{0.5}{}
+\sse{Schichten}
+\uli{
+	\li 1 Schicht erlaubt konvexe Akzeptanzgebiete. Mehrere Getrennte Gebiete sind nicht möglich.
+	\li 2 Schichten erlauben das Kombinieren von mehreren Formen
+}
+\img{img/v7.4.jpg}{konkave Akzeptanzgebiete}{0.5}{}
+
+\se{Lernen - Wie werden die Gewichte richtig eingestellt?}
+\definition{Back Propagation Network}{Fehlerfortpflanzungsnetzwerk}
+
+
+\ch{Holographisches Perzeptron (6.8)}
+
+
+\se{Repetition}	
+\exam{Wissen, das mit Langrange Multiplikatoren Nebenbedingungen eingebaut werden}
+\exam{Support Vektormaschine: Nur wissen, was es bringt \ra kein besseres Perzeptron, dafür stabilität weil sich Grenze genau in Mitte zwischen Punkten befindet.}
+
+
+\ch{Selbstorganisierende Kohonennetzwerke}
+\img{img/v9.1.jpg}{Finden eines globalen Maximums}{0.75}{}
+\uli{
+	\li Ziel ist es, von einem lokalen Minimum zu einem globalen Minimum zu finden
+	\li Mischung zwischen Gradientenabstieg und Zufallssuche
+	\li Vorgehen: 
+		\oli{
+			\li Neuronen liegen als Netz am Kneuel (zufällig)
+			\li Zielpunkt zufällig wählen
+			\li Nächstes Neuron zum Zielpunkt ziehen
+			\li Nachbarelemente an imaginärem Gummifaden mitziehen
+			\li 2-4 wiederholen
+		}
+	\li Auch wenn ein Neuron an seinem Zielpunkt angelangt ist, kann es wieder davon weggezogen werden, sobald ein Nachbarneuron zu seinem Platz strebt \ra Zielpunkte werden nie genau erreicht, aber angenähert.
+	\li Das Ergebnis ist nicht unbedingt die absolut beste Lösung, aber eine Gute.
+	\li Wendet man das gleicher Verfahren mehrmals an mit verschiedenen Knäuel so kann man das kleinste auswählen. 
+	\li Erhält man mehrmals die Gleich, so kann man davon ausgehen dass es eine sehr gute ist
+	\li Schwierigkeit besteht darin, das reale Problem auf ein Kohonennetz abzubilden
+}
+
+
+\ch{Monte Carlo Funktion}
+\uli{
+	\li Gradientenabspieg mit  ``Schütteln''
+	\li Berechnet man ein besseres Optimum, so wird dieses als neues Optimum gewählt
+	\li Damit man aus einem lokaln Minimum rausspringen kann, wählt man mit einer kleinen Wahrscheinlichkeit das neue Optimum, auch wenn es schlechter als das Vorherige ist
+	\li Desto schlechter das neue Optimum, desto unahrscheinlicher seine Wahl.
+}
+
+\expl{Rüttelverfahren}{
+	\uli{
+		\li Für alte Lösung wird Qualität berechnet
+		\li Mit der alten Lösung wird mit möglichst kleiner Änderung eine neue Lösung berechnet \ra\ ist sie Besser, wird sie meistens genommen.
+		\li Mit einer Wahrscheinlichkeit, die vom Abstand der Güte abhängt, wird trotzdem die schlechtere gewählt, was das Springen über ein lokales Maximum ermöglicht
+	}
+}
+\img{img/v9.2.jpg}{Gradientenabstieg mit Rüttelverfahren}{0.5}{}
+
+\expl{Probabilistische Optimierungsmethoden}{
+Zwei Komponenten:
+	\uli{
+		\li Schrittweise verbesserug: Gradientenabstieg \ra\ Behalten, was gut war
+		\li Schütteln \ra\ Struktur aufbrechen
+	}
+}
+
+
+
+
+
+
 
 
 
