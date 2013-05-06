@@ -354,6 +354,61 @@ Zwei Komponenten:
 }
 
 
+\ch{Hopfield Network}
+\definition{rekurent}{ungerichtetes Netzwerk}
+\expl{Hopfield Netzwerk}{Das Hopfield Netzwerk lernt nicht, sondern setzt die Gewichte anhand des eingegebenen Musters.}
+
+
+
+\ch{Repetition}
+\img{img/v5.1.jpg}{}{0.5}{}
+\se{Lineare Trennverfahren}
+\sse{Eigenschaften}
+\uli{
+	\li Gradientenabstieg
+	\li Überwacht
+	\li vorwärtsgerichtete Netze
+}
+\sse{Verfahren}
+\uli{
+	\li klassisches Perzeptron \ra\ für klassisches Gradientenabstiegs-Lernen
+	\li holographisches Neuron \ra\ neuformulierungen des klassischen Perzeptron-Prinzipes
+}
+
+\se{Nicht-Lineare Trennverfahren}
+\sse{Eigenschaften}
+\uli{
+	\li Versteckter Gradientenabstieg
+	\li Rütteln (Temperatureinfluss)
+	\li Selbstorganisiert
+	\li rekurentes Netzwerk
+}
+
+\sse{Verfahren}
+\uli{
+	\li Monte-Carlo erfahren
+	\li Kohonen-Netze
+	\li Hopfield Netz
+}
+
+
+
+\ch{Effizienzbetrachtungen}
+\uli{
+	\li Erkennung von Translationen und Rotationen von Bilder sind möglich
+	\li Skalierung ist nur theorethisch möglich, in der Praxisch scheitert das Problem an der Rechengenauigkeit der Numerik
+}
+
+
+
+\ch{Genetische Algorithmen}
+\expl{Monte Carlo}{Gute Lösungen werden nur leicht abgeändert, neue Varianten werden ausprobiert}
+\stdImg{v11.1}{Fitnessfunktion}
+\uli{
+	\li Genetische Algorithmen brauchen immer eine Fitnessfunktion, die optimiert werden kann
+	\li Fitnessfunktionen haben oft viele locale minimas \ra\ Gradientenabstieg kommt nicht zum Ziel
+}
+
 
 
 
