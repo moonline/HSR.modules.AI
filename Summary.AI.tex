@@ -409,6 +409,155 @@ Zwei Komponenten:
 	\li Fitnessfunktionen haben oft viele locale minimas \ra\ Gradientenabstieg kommt nicht zum Ziel
 }
 
+\se{Repetition}
+\expl{Monte Carlo}{Man wählt eine zufällige Lösung, wenn die neue Lösung besser ist als die Alte, wird sie genommen, wenn sie schlechter ist, wird sie mit einer kleinen Wahrscheinlichkeit (abhängig von der Qualität der neuen Lösung) trotzdem genommen.\\
+\ra\ Neue Lösung wird gebldet aus alter Lösung: Gradientenabstieg
+\ra\ Teilweises wegwerfen: Springen über lokale Maxima}
+
+\expl{Genetische Algorithmen}{
+\uli{
+	\li Elternauswahl durch Glücksrad: bilden einer neuen Lösung aus der Alten (Gute Eltern haben grössere Wahrscheinlichkeit)
+	\li Kreuzung: übernehmen guter Elemente aus alter Lösung
+	\li Mutation: Bilden von neuer Information \ra\ Überspringen lokaler Maxima
+}
+}
+
+
+
+\se{Genetische Programmierung}
+\definition{Genetische Programmierung}{Genetische Erzeugung eines optimalen Programms}
+\expl{Genetische Programmierung}{Operationen werden zufälig gewählt und deren Kombination mit einem genetischen Algorithmus verbessert.}
+\begin{verbatim}
+randomp := Block[{r = Random[Integer, {1, 26}]}, Which[
+  r <= 3, If[randomp, Evaluate[randomp], Evaluate[randomp]],
+  r <= 6, And[randomp, randomp],
+  r <= 9, Or[randomp, randomp],
+  r <= 12, Not[randomp],
+  r == 13, e,
+  r == 14, se,
+  r == 15, s,
+  r == 16,sw,
+  r == 17, w,
+  r == 18, nw,
+  r == 19, n,
+  r == 20, ne,
+  r == 21, east,
+  r == 22, south,
+  r == 23, west,
+  r == 24, north,
+  r == 25, True,
+  r == 26, False]]
+Do[program[i]=randomp,{i,1000}]
+\end{verbatim}
+
+
+\se{Clustering Gruppierverfahren}
+\expl{Clustering}{Aufteilen von Parametern in Gruppen. Die besten Gruppen anschliessend wiederum aufteilen.}
+Um Konkave und Konvexe Trennungen zu ermöglichen, müssen die Punkte Punkt-zu-Punkt berechnet werden, und nicht Punkt-Gruppe.
+
+\se{Exam}
+\uli{
+	\li Mathematica Programme lesen können
+	\li Do Loop verstehen
+	\li Fehlerlandschaft erklären Können (mit/ohne Gradientenabstieg lösbar)
+	\li Satz von Göden (Fehler kann nicht auf 0 gebracht werden können). Aus dem System heraus lässt sich nicht das ganze System beschreiben. Man kann immer nur eine Abstraktion der Realität machen.
+	\li Spieltheorie
+		\uli{
+			\li Dodon's Problem
+			\li Treibt die Dame in die Ecke, Graphen zeichnen und ausfüllen können (Sprague/Grundi) [2P]
+			\li Hölzchenspiel beherrschen (NIM Spiel), Vektor Darstellung beherrschen, aus Vektordarstellung Graphwerte herleiten können (XOR)
+		}
+			\li Vertiefungen kommen an Prüfung nicht
+	\li Eindimensionale Optimierungen
+		\uli{
+			\li Kerzenaufgabe
+			\li Aufgabe mit dem über das Feld gehen, um zur Freundin zu kommen
+			\li Langange Multiplikatoren: wissen, wofür sie da sind und was man damit machen kann (Explizite Lagrange Aufgabe kommt nicht)
+			\li Wissen, weshalb man Gradientenabstieg überhaupt macht (Funktion nicht gegeben, und man weis nicht, wo sich das Minima befindet)
+			\li Zick-Zack Bild (Topographie (3.10) der zu optimierenden Funktion) kennen
+		}
+	\li Wissen, was nicht triviale Lösungsmengen sind
+	\li Komprimierungsverfahren: Wissen dass Selbstähnlichkeit von Sachen ausgenutzt werden kann für Komprimierung, mehr nicht
+	\li Neurnale Netze
+		\uli{
+			\li Biologische Grundlage von Neuronen nicht kennen
+			\li Biophysik von Hodkin maxli nicht kennen
+		}
+	\li Perzeptron
+		\uli{
+			\li lineare Summierer
+			\li Sinn er Feuerschwelle kennen
+			\li AND-Neuron kennen
+				\uli{
+					\li Programm des AND Neurons lesen können
+					\li Input und Outputwerte lesen können und daraus AND ablesen können
+					\li Input der Feuerschwelle kennen und zuordnen können
+					\li Wissen, das es auch ein Gradientenabstieg ist
+					\li Sinn des Unit Steps kennnen
+				}
+			\li Kosinunserkennung kennen
+				\uli{
+					\li Sinn der Ausgabefunktion kennen
+				}
+			\li Wissen, dass damit XOR nicht umgesetzt werden kann
+			\li Lineare Trennung kennen
+			\li Werbos Perzeptron kennen und zeichnen können (mit Feuerschwellen), verstehen, dass Werbos im Raum trennt
+			\li Allgemeines Netz mit zwei verborgenen Schichten kennen (out- und hiddelta kennen) (Fehlerrückverfolgungsnetz)
+			\li Support-Vektormaschine: Wissen, dass sie linear trennt und Lagrange Multiplikatoren gebraucht werden. Optimale Trennlinie bestimmen können.
+			\li Holographisches Neuron: wissen, dass es ein Perzeptron für komplexe Zahlen ist. \ra\ Gradientenabstieg\\
+				Zeile mit Conjugate kennen. (Erkennen, dass es das holographische Neuron ist)
+			\li Wissen, was einen Lernepoche ist (Einmal durch alle Übungsaufgaben durchgehen)
+			\li Kohonennetzwerke: 
+				\uli {
+					\li Code Schnipsel mit gsi erkennen
+				}
+			\li Monte Carlo: 
+				\uli{
+					\li Wenn die Lösung besser ist (Energie kleiner ist) wird die neue Lösung genommen. Schlechtere Lösung wird mit Wahrsch. genommen, die umso kleiner ist, je schlechter die Lösung ist.
+					\li Ähnliche Lernkurve wie beim Perzeptron
+				}
+			\li Hopfield: 
+				\uli{
+					\li Wissen, wie es gemacht wird 
+					\li(Prototypenmuster, die mit sich selbst und den Kollegen multipliziert werden)
+					\li Muster werden aufeinandern gelegt, Diagonale null gesetz
+					\li Helfen neues Muster zu bearbeiten, bis es in einen Topf eines best. Prototypen fällt
+					\li Mit jedem Muster wird das konträre Muster gespeichert
+					\li Wissen, wie man was damit macht
+					\li Wissen, wann Hopfield Netzwerke schlecht sind und das TSP Problem nicht lösen können \ra\ Musterzuordnung bringt Hopfield was
+					\li Bildervergleich: Nur Fourierkoeffizienten verden verglichen.
+				}
+			\li Genetische Algorithmen:
+				\uli{
+					\li Genotyp, Phenotyp, Glücksrad kennen (Glücksrad ähnlich wie Zufall beim Monte Carlo)
+					\li Code erkennen können (z.B. anhand von Parent im Code
+					\li Fitnesskurve kennen (averige and maximum fitness)
+					\li Genetische Programmierung kennen
+				}
+			\li Clustering
+		}
+		\important{1A4 Blatt Zusammenfassung}
+		
+		Fragen:
+		\uli{
+			\li Strategiebaum -> Ränge einzeichnen
+			\li Unterschied überwachtes Lernen / unüberwachstes (Prototypen) / und Clustering / vorwärtsgerichtetes Netzwerk / nicht vorwärtsgerichtetes Netzwerk
+			\li Kann ein Perzeptron ohne Bias mit der Ausgabefunktion (f(x)=1 für x>0, f(x)=0 für x <0) die Konjunktion A und B mit logischen Werten 0/1 implementieren?
+			\li Unterscheidung von 100 Bildertypen mit Auflösung 1024*1024, welchen Algorithmus benützen Sie? -> Hopfield sicher nicht verwenden, Holographisches Neuron wäre gut
+			\li Was, wenn die Lernrate zu gross gewählt wird.
+			\li Wie wird für ein neuronales Netr die optimale Neuronenzahl bestimmt? für Hopfield, für Kohonen, für Backpropagation -> Hf 7 mal so viele wie man Pixel unterscheiden woll, für Kh 2mal
+			\li Wahrheitstabelle gegeben, Architektur für Perzeptron bestimmen (Normal oder Werbos) Satz von geeigneten Gewichten bestimmen
+			\li Nochmals Wahrheitstabelle, einfachstes Perzeptron oder Netzwerk bestimmen (Feuerschwellen bestimmen, Gewichte suchen)
+			\li einfaches Neuronales Netz finden, das Punkte des Gebietes A von Punkte des Gebietes B trennt. -> Eine versteckte Schicht, zwei Input für x und y
+			\li NIM Spiel mit 5 Haufen, geg Haufenbesetzungszahlen. Herausfinden, was zu tun ist.
+			\li Welche Aufgaben von Mustern kann das Hopfield besser als das Prototypen speichern? Muster gegeben -> Ausrechnen, das Skalarprodukte 0 sind
+			\li Code Snippets zuordnen
+			\li Nicht stochastisches Netzwerk bestimmen
+		}
+		
+}
+
+
 
 
 
