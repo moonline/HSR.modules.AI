@@ -86,12 +86,55 @@ Matrixen
 13) Mit einer Adjazenzmatrix. Die Knoten des Graphen werden nummeriert und den Zeilen und Spalten der Matrix zugeteilt. Eine 1 in einem Matrix Feld definiert eine von-zu Kante.
 	Beispiel::
 	
-		| 0 1 0 |					       ,-----,
-		| 1 1 0 |					(3)---(1)---(2)-,
-		| 1 0 0 |					             '--'
+		| 0 1 0 |					        .<-----.
+		| 1 1 0 |					(3)<---(1)--->(2)--.
+		| 1 0 0 |					               ^---'
 		Verbindungen bestehen zwischen den Knoten 1 und 2, 2 und 1, 2 mit sich selbst, 3 und 1.
 		
 		
 14) Durch Multiplizierung der Matrix mit sich selbst.
 
 
+Optimierungen
+=============
+
+Eindimensionale Optimierungen
+-----------------------------
+15)
+	a) 
+		Vorgenen
+			Es wird eine Kurve erstellt mit Dunkelheit/Weg. Durch Gradientenabstieg wird der Ort der kleinsten Dunkelheit (kleinster Fehler) gefunden.
+		Skizze::
+		
+			D.ht.^       ..-+-..
+			     |   .-'        '-.
+			     | .'              '.
+			     |'                  '
+			     +--------------------+-> Weg
+			     '          a         '
+			Kerze A                Kerze B
+		
+		
+		Lösung
+			Am Hellsten ist direkt bei der einen oder der andern Kerze
+			
+	b)
+		Skizze::
+		
+			-----Strasse----------------
+			            <-s->          ^     
+			                           f
+			                        +  v
+			                            
+			Vs Geschwindigkeit Strasse, Vf Geschwindigkeit auf dem Feld
+			
+			
+		Vorgehen::
+		
+			sp: Teilstrecke der Strasse, bis zum Abbiegepunkt
+			t = sp/Vs+fp/Vf
+			fp = sqrt((s-sp)^2+f^2)
+			
+			Wie oben Diagramm mit Zeit/Weg bis Abbiegepunkt erstellen, mit Gradientenabstieg das Minimum finden
+			
+			
