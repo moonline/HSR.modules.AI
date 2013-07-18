@@ -60,3 +60,38 @@ Einführung in die Künstliche Intelligenz
 		
 8) Funktion siehe 7, Schleifen: Bei Schleifen kann die Bewertung nicht berechnet werden, weil sie sich selbst unendlich hochschaukeln würde
 
+
+Matrixen
+========
+9) eine Matrix mit gleich vielen Spalten und Zeilen
+
+10) 
+	* Eine Matrix, zu der es eine inverse gibt (wenn es eine zweite Matrix I gibt, mit deren multipliziert sich die Einheitsmatrix E ergibt -> M x I = E ). 
+	* Man kann dies auch überprüfen, indem man die Matrix als Graph schreibt. Is dieser Verbunden, ist die Matrix regulär. 
+
+11) eine Nachbarschaftsmatrix, die einen Graph abbildet. Adjazenzmatrixen sind immer quadratisch.
+
+12) 
+	stochiastische Matrix
+		eine Matrix, deren Zeilen- und Spaltensummen 1 betragen
+	Zeilenstochiastische Matrix
+		wenn alle Einträge der Matrix zwischen 0 und 1 liegen und die Zeilensummen 1 ergeben.
+	Spaltenstochiastische Matrix
+		wenn alle Einträge der Matrix zwischen 0 und 1 liegen und die Spaltensummen 1 ergeben.
+	rechtsstochiastische Matrix
+		?
+	linksstochiastische Matrix
+		?
+		
+13) Mit einer Adjazenzmatrix. Die Knoten des Graphen werden nummeriert und den Zeilen und Spalten der Matrix zugeteilt. Eine 1 in einem Matrix Feld definiert eine von-zu Kante.
+	Beispiel::
+	
+		| 0 1 0 |					       ,-----,
+		| 1 1 0 |					(3)---(1)---(2)-,
+		| 1 0 0 |					             '--'
+		Verbindungen bestehen zwischen den Knoten 1 und 2, 2 und 1, 2 mit sich selbst, 3 und 1.
+		
+		
+14) Durch Multiplizierung der Matrix mit sich selbst.
+
+
