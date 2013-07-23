@@ -137,4 +137,70 @@ Eindimensionale Optimierungen
 			
 			Wie oben Diagramm mit Zeit/Weg bis Abbiegepunkt erstellen, mit Gradientenabstieg das Minimum finden
 			
-			
+
+16) Eine Funktion mit einem Freiheitsgrad wird durch weitere Bedingungen (Nebenbedingungen) eingeschränkt. Lagrange Multiplikatoren helfen, die Nebenbedingungen über eine weitere Unbekannte in die Gleichung einzubauen, sodass nur noch eine Gleichung zu lösen ist.
+	Beispiel::
+	
+		f(x,y) Gleichung
+		g(x,y) = c Nebenbedingungen
+		
+		A(x,y,l) = f(x,y) + l*(g(x,y)-c)
+		l = Lagrangemultiplikator
+		
+	
+	Schiffbeispiel::
+	
+		      A       C
+		------*-------*--------          ------*-------*--------
+		       \     /                          \  a  /
+		        \   /                            ° - .
+		         \ /                              \ /
+		----------*------------          ----------*------------
+		          B
+		Vx Geschwindigkeit Schiff von A nach B
+		Vy Geschwindigkeit Schiff von B nach C
+		b Winkel bei b
+		sx, sy Streckenlänge
+		a Abstand der Schiffe
+		
+		v = s/t s = v*t
+		
+		svx = Vx*t
+		svy = Vy*t
+		
+		a^2 = (sx-svx)^2 + svy^2 - 2*(sx-svx)*svy*cos(b)
+		f(t) = (sx-Vx*t)^2 + (Vy*t)^2 - 2*(sx-Vx*t)*Vy*t*cos(b)
+		sx, sy, Vx, Vy und b einsetzen, Minimum auf Kurve bestimmen
+		
+		
+17) Faktoren, mit denen Nebenbedingungen multipliziert werden müssen, damit die Gleichung lösbar wird.
+
+
+Mehrdimensionale Optimierungen
+------------------------------
+18) ::
+	
+		x^2 + 0.25y^2
+		
+		Jede Gleichung einzeln ableiten
+		dx/x x^2 + 0.25y^2 = 2x
+		dy/y x^2 + 0.25y^2 = 0.5y
+		
+		Nullpunkt der einzelnen Gleichungen finden
+		2x = 0
+		0.5y = 0
+		
+		Minimum bei 0/0
+		
+		
+19) Ein Gradient wird solange verändert, bis der Fehler der Gleichung am Minimum angelangt ist. Anschliessend wiederholt man dies mit jedem Gradienten. Den Gesammten Vorgang macht man so lange, bis sich der Fehler nicht mehr verändert.
+
+20) Die Nebenbedingungen werden in Gleichungen überführt. Die Haupt und Nebengleichungen werden in die Simplex-Tabelle eingetragen. Anschliessend wird mit Simplex Iterationen der Zielwert angenähert.
+	http://www.anginf.de/download/bwl/ibl/simplex.html
+	
+21) Eine Menge, deren Rand stets eine nach aussen gewölbte oder Flache kante hat (keine Einbuchtung) und damit die Verbindungsstrecken zwischen sämmtlichen Punkten der Menge ebenfalls innerhalb der Figur liegen.
+
+
+
+		
+		
