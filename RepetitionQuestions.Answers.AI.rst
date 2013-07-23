@@ -201,6 +201,74 @@ Mehrdimensionale Optimierungen
 21) Eine Menge, deren Rand stets eine nach aussen gewölbte oder Flache kante hat (keine Einbuchtung) und damit die Verbindungsstrecken zwischen sämmtlichen Punkten der Menge ebenfalls innerhalb der Figur liegen.
 
 
+Nicht triviale Lösungsmengen
+============================
+22) Nicht triviale Lösungsmengen sind unendlich grosse Lösungsmengen deren eine Funktion zugrunde liegt, die nicht auf einen Lösungspunkt zusteuert.
 
+23) 
+	* Grundgerüst: Ein Dreieck mit drei Eckpunkten, die durch Zufall ausgewählt werden
+	* Gestartet wird an einem beliebigen Punkt
+	* In jeder Iteration wird vom aktuellen Punkt der halbe Weg bis zu einem zufälligen Eckpunkt des Dreiecks gegangen.
+	* Die Bewegung kommt nie zur Ruhe, wird jedoch immer Feiner
+	
+24)
+
+25) Man muss mehrere Fraktale mit unterschiedlichen Parametern übereinander legen.
+
+
+Neuronale Netze
+===============
+26) ::
+
+		\           |
+		|        __/  Dendriten
+		 \_     /
+		   \   /
+		    (O) Soma (Zellkern)
+		     |
+		     |
+		     | Axon (Verbindung zu anderem Neuron)
+		     
+		     
+27) Das Perzeptron ist das Mathematische Modell eines Neurons. Es Verknüpft die Eingabewerte von den Dendriten gewichtet und erzeugt unter Berücksichtigung der Feuerschwelle eine Ausgabe.
+
+28) 
+	* Das Lernen funktioniert, in dem für die Eingabekanäle (Dendriten) optimale Gewichte gefunden werden.
+	* Ein Eingang wird gestärkt (Gewicht erhöht), falls der Eingabewert zum Feuern des Neurons geführt hat.
+	* Überwachtes Lernen: Dem Perzeptron wird von Aussen die Abweichung vom Idealwert mitgeteilt, das Neuron verändert anhand der Abweichung die Gewichte
+	* Selbstorganisierte Lernen: Das Perzeptron erhält einen Prototyp (Zielwert) und konvergiert selbst auf diesen zu.
+	
+29) Die Gewichte bestimmte den Faktor, mit dem die Eingangswerte multipliziert werden.
+
+30) ::
+
+		^ 
+		|  |\          |\          |\ Spike (Feuerstoss)
+		| / |         / |         / |
+		| | |         | |         | |
+		| |  \        |  \        | \
+		|-|- -\- - - -|- -\- - - -|- \ - - - Feuerschwelle
+		|      v´`-_-´     v´`-_-´
+		+-----------------------------------------> t
 		
 		
+31) Beschreibt, wie der Zellkörper auf Aufladungen reagiert. Beim Perzeptron wandelt die Ausgabefunktion die summierten Eingabewerte in einen Ausgabewert um.
+
+32) 
+
+33) Weil ein Perzeptron nur linear, d.h. an einer Stelle auf dem Zahlenstrahl, trennen kann. 
+	Beispiel::
+	
+		OR mit zwei Eingängen (Summe):
+		-1 0|1 2 3 4
+		Sobald der Summierte Wert 1 erreicht, ist mindestens ein Eingang 1
+		
+		XOR mit zwei Eingängen (Summe):
+		-1 0|1|2 3 4
+		Das Perzeptron müsste zweimal trennen, was es nicht kann.
+		
+	
+	Werbos Perzeptron
+		Das Werbos Perzeptron verknüpft die Beiden Eingänge und nimmt dies als zusätzliche Eingang entgegen. Damit lassen sich auch XOR umsetzen. Genau genommen handelt es sich beim Werbos Perzeptron jedoch um ein Perzeptronennetz mit zwei Perzeptronen.
+		
+
