@@ -272,3 +272,60 @@ Neuronale Netze
 		Das Werbos Perzeptron verknüpft die Beiden Eingänge und nimmt dies als zusätzliche Eingang entgegen. Damit lassen sich auch XOR umsetzen. Genau genommen handelt es sich beim Werbos Perzeptron jedoch um ein Perzeptronennetz mit zwei Perzeptronen.
 		
 
+Einfache Netze
+--------------
+Beispiel::
+
+	     * Ausgabeschicht
+	    /|\
+	   *,*.* verborgene Schicht
+	  /,\ /.\
+	 // / \ \\
+	*´-´   `-`* Eingabeschicht
+	Alle Perzeptronen der verborgenen Schicht sind mit allen Ausgabeneuronen verbunden.
+	
+	
+1 verborgenen Schicht
+	erlaubt konvexe Akzeptanzgebiete
+2 verborgene Schichten
+	erlauben das Kombinieren von mehreren Formen
+	
+
+Imaginäre Gewichte
+------------------
+34) Holographische Perzeptronen arbeiten mit imaginären Gewichten. Vorteile: 
+	* grosse Speicherfähigkeit
+	* hohe Verarbeitungsgeschwindigkeit
+	
+35) Nein. Sie können genau gleich viel wie die gewöhnlichen.
+
+36) 
+
+
+Kohonennetzwerke & Monte Carlo
+==============================
+
+Kohonennetzwerke
+----------------
+37) Kohonennetzwerke setzen auf das Prinzip, das Punkte die zu orten hinkonvergieren, andere Punkte beeinflussen.
+	Beispiel TSP
+		1) Städte als Punkte einzeichnen
+		2) Neuronen liegen zufällig als Perlenschnurkneuel da, es sind wesentlich mehr Neuronen als Städte vorhanden
+		3) Zufälliges Neuron zur nächsten Stadt ziehen
+		4) Die Nachbarneuronen werden wie an einem Gummifaden z.T. mitgezogen
+		5) Das Ziehen wird für alle Neuronen ein Paar Mal wiederholt
+		
+38) Das Netzwerk kommt nicht zur Ruhe und es wird kein vernünftiger Zielzustand erreicht.
+
+39) Die Zielpunkte werden nur angenähert, aber nicht ganz erreicht. Es wird eine gute Lösung gefunden, aber nicht unbedingt die Beste.
+
+40) Berechnet man den gleichen Pfad mehrmals mit jeweils zufälligen Kneuel, so kann man das optimalste Resultat auswählen und oder bekommt ein bereits sehr gutes Resultat bestätigt.
+
+
+Monte Carlo 
+-----------
+41) Der Fehler wird nach dem Prinzip des Gradientenabstiegs mit einer Zufallskomponente verkleinert. Ist die neue Lösung besser als die Alte, wird sie genommen. Mit einer kleinen Wahrscheinlichkeit (Abhängig von der Qualität des Ergebnisses) wird bei einem schlechteren Resultat trotzdem das Neue übernommen. Dies ermöglicht das Herausspringen aus lokalen Minima.
+
+42) Durch "Rütteln": Eine neue schlechtere Lösung wird mit einer kleinen Wahrscheinlichkeit trotzdem genommen -> Herausspringen aus lokalem Minima.
+
+
