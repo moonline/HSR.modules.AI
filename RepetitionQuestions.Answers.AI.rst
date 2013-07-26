@@ -331,14 +331,73 @@ Monte Carlo
 
 
 Hopfield Netzwerk
------------------
-43) .. compound::
+=================
+
+43
+--	
+Dem Hopfield Netzwerk werden Muster eingegeben, anhand deren die Gewichte gesetzt werden. Anschliessend kann das Hopfield Netzwerk neue Muster zu einem der Prototypen zuordnen. 
+
+* Das Hopfield Netzwerk lernt nicht im eigentlichen Sinne, Sondern konvergiert vom eingegebenen Muster zu einem passenden Prototypen.
+* Beim Hopfield Netzwerk ist jedes Neuron mit jedem andern (ausser sich selbst) verbunden.
+* Das Hopfield Netzwerk speichert nebst jedem eingegebenen Muster (Prototyp) auch dessen Inverse.
 	
-	Dem Hopfield Netzwerk werden Muster eingegeben, anhand deren die Gewichte gesetzt werden. Anschliessend kann das Hopfield Netzwerk neue Muster zu einem der Prototypen zuordnen. 
 	
-	* Das Hopfield Netzwerk lernt nicht im eigentlichen Sinne, Sondern konvergiert vom eingegebenen Muster zu einem passenden Prototypen.
-	* Beim Hopfield Netzwerk ist jedes Neuron mit jedem andern (ausser sich selbst) verbunden.
-	* Das Hopfield Netzwerk speichert nebst jedem eingegebenen Muster (Prototyp) auch dessen Inverse.
+44)
+--
+Siehe 43
+
+
+Genetische Algorithmen
+======================
+
+45
+--
+*Mutation*
+	Bilden von neuer Information -> Überspringen lokaler Minima
+*Kreuzung*
+	Übernehmen guter Elemente aus der alten Lösung
+*Fitness*
+	Die Fitnessfunktion ist eine Funktion mit extrem vielen lokalen Minima. Daher kommt man mit Gradientenabstieg nicht zum Ziel.
 	
-	
-44) Siehe 43
+	Fitnessfunktion::
+		
+		^
+		|                   ,-.
+		|    _     ,-.     /   \     ,-.     _
+		| \_/ \   /   \   /     \   /   \   / \_
+		|      `-´     \_/       \_/     `-´
+		+----------------------------------------->
+		
+		
+45
+--
+Es wird irgend eine Lösung gewählt und von dieser ausgegangen. Dabei werden mehrere Kindlösungen erzeugt. Durch das Glücksradverfahren werden aus den Kindlösungen einige ausgewählt für die nächste Generation.
+Durch Mutation (Invertieren zufällig gewählter Bits) wird neue Information geschaffen.
+
+46
+--
+Das Glücksrad bildet die Lösungen unter Berücksichtigung ihrer Fitness auf einen Kreis ab. 
+Lösungen mit guter Fitness erhalten grössere Sektoren, Lösungen mit schlechterer Fitness kleinere.
+
+Das Glücksrad wählt nach dem Zufallsprinzip eine Position aus. Die Lösung, in deren Sektor die Position zeigt, wird als Eltern für die nächste Generation gewählt.
+
+Wie beim Monte Carlo verfahren sorgt die Sektorenverteilung beim Glücksrad dafür, dass schlechtere Lösungen zwar wesentlich seltener genommen werden, 
+aber mit einer kleinen Wahrscheinlichkeit trotzdem zum Zuge kommen und damit lokale Minima übersprungen werden können.
+
+
+Genetische Programmierung
+-------------------------
+
+47
+..
+Das erzeugen von Programmen durch Genetische Algorithmen. 
+
+Dabei werden die verfügbaren Operationen zufällig zusammengebaut. Durch Mutation und Kreuzung wird das Minima der Fitnessfunktion gesucht und damit ein optimales Programm für dieses Problem gefunden.
+
+49
+..
+* Es muss eine Einschränkung auf bestimmte Operationen und Variablen stattfinden
+* Es können nur Operationen verwendet werden, die beliebig zusammengewürfelt werden können
+* Die Qualität der Lösung muss numerisch bestimmbar sein und deren Fehler einer Fitnessfunktion folgen
+
+
