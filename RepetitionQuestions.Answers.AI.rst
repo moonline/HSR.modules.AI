@@ -9,9 +9,9 @@ Repetitionsfragen: https://github.com/moonline/AI/blob/master/RepetitionQuestion
 Analytische Optimierungsprobleme
 ================================
 1
-.
+-
 Regeln
-	* Der Barbier schneidet allen die Haare, die sich selbst nicht die Haare schneiden
+	Der Barbier schneidet allen die Haare, die sich selbst nicht die Haare schneiden
 Problem
 	Wenn sich der Barbier selbst nicht die Haare schneidet, müsste er sich selbst die Haare schneiden, womit er sich selbst die Haare schneidet und sich selbst die Haare nicht schneiden sollte
 Lösung
@@ -20,26 +20,28 @@ Lösung
 		
 Einführung in die Künstliche Intelligenz
 ========================================
-2)
+2
+-
 * Sprach-/Bilderkennung
 * Erzeugung von neuem Wissen aus bestehendem
 * Automatisches Programmieren
 * Expertensysteme
 	
-3)
+3
+-
 * Informationen / Modellen
 * Algorithmen zur Veränderung von Informationen/Modellen
 	
 4
---
+-
 Weil das Modell nur eine Abstraktion der Realität ist und damit einen bestimmten Fehler beinhaltet.
 
 5
---
+-
 Gödel beschreibt, das ein der Versuch, aus einem System heraus das System komplett zu beschreiben unlösbare Wiedersprüche entstehen. z.B. Kann ein Computer nicht alle Probleme lösen oder das menschliche Gehirn wird nie in der Lage sein, seine eigene Funktion vollständig Wiederspruchsfrei zu beschreiben.
 
 6
-.
+-
 Situation
 	Das Dodon's Problem beschreibt ein Gefängnis mit 100 offenen Zellen in denen Häftlinge sitzen. Zuerst wird jedes, dann jedes zweite, dann jedes 3, ... bis 100. Schloss invertiert (geschlossen wenn offen, geöffnet wenn geschlossen). Die Häftlinge der Türen, die am schluss offens sind, dürfen in die Freiheit.
 Problem
@@ -51,7 +53,7 @@ Lösung
 	Quadratzahlen sind Gewinnerpositionen
 
 7
-.
+-
 Situation
 	Auf einem Schachbrett mit einer Figur/zwei Spielern wird horizontal oder vertikal nach unten oder links gezogen. Gestartet wird in der rechten oberen Ecke.
 Problem
@@ -66,18 +68,20 @@ Lösung
 	Die Gewinnerpositionen befinden sich auf der Diagonalen
 		
 8
---
-Funktion siehe 7, Schleifen: Bei Schleifen kann die Bewertung nicht berechnet werden, weil sie sich selbst unendlich hochschaukeln würde
+-
+Funktion siehe 7.
+
+Schleifen: Bei Schleifen kann die Bewertung nicht berechnet werden, weil sie sich selbst unendlich hochschaukeln würde
 
 
 Matrixen
 ========
 9
---
+-
 eine Matrix mit gleich vielen Spalten und Zeilen
 
 10
-.
+--
 * Eine Matrix, zu der es eine inverse gibt (wenn es eine zweite Matrix I gibt, mit deren multipliziert sich die Einheitsmatrix E ergibt -> M x I = E ). 
 * Man kann dies auch überprüfen, indem man die Matrix als Graph schreibt. Is dieser Verbunden, ist die Matrix regulär. 
 
@@ -86,7 +90,7 @@ eine Matrix mit gleich vielen Spalten und Zeilen
 eine Nachbarschaftsmatrix, die einen Graph abbildet. Adjazenzmatrixen sind immer quadratisch.
 
 12
-.
+--
 stochiastische Matrix
 	eine Matrix, deren Zeilen- und Spaltensummen 1 betragen
 Zeilenstochiastische Matrix
@@ -123,82 +127,87 @@ Eindimensionale Optimierungen
 
 15
 ..
-a
-~
+a)
+~~
 Vorgenen
 	Es wird eine Kurve erstellt mit Dunkelheit/Weg. Durch Gradientenabstieg wird der Ort der kleinsten Dunkelheit (kleinster Fehler) gefunden.
 
-Skizze::
+*Skizze*
+	::
 
-	D.ht.^      ..-++-..
-	     |   .-'        '-.
-	     | .'              '.
-	     |'                  '
-	     +--------------------+-> Weg
-	     '          a         '
-	Kerze A                Kerze B
+		D.ht.^      ..-++-..
+		     |   .-'        '-.
+		     | .'              '.
+		     |'                  '
+		     +--------------------+-> Weg
+		     '          a         '
+		Kerze A                Kerze B
 		
 		
 Lösung
 	Am Hellsten ist direkt bei der einen oder der andern Kerze
 	
-b
-~
-Skizze::
+b)
+~~
+*Skizze*
+	::
 
-	-----Strasse----------------
-	            <-s->          ^     
-	                           f
-	                        +  v
-	                            
-	Vs Geschwindigkeit Strasse, Vf Geschwindigkeit auf dem Feld
+		-----Strasse----------------
+		            <-s->          ^     
+		                           f
+		                        +  v
+		                            
+		Vs Geschwindigkeit Strasse, Vf Geschwindigkeit auf dem Feld
 	
 	
-Vorgehen::
+*Vorgehen*
+	::
 
-	sp: Teilstrecke der Strasse, bis zum Abbiegepunkt
-	t = sp/Vs+fp/Vf
-	fp = sqrt((s-sp)^2+f^2)
-	
-	Wie oben Diagramm mit Zeit/Weg bis Abbiegepunkt erstellen, mit Gradientenabstieg das Minimum finden
-			
+		sp: Teilstrecke der Strasse, bis zum Abbiegepunkt
+		t = sp/Vs+fp/Vf
+		fp = sqrt((s-sp)^2+f^2)
+		
+		Wie oben Diagramm mit Zeit/Weg bis Abbiegepunkt erstellen, mit Gradientenabstieg das Minimum finden
+				
 
 16
 --
 Eine Funktion mit einem Freiheitsgrad wird durch weitere Bedingungen (Nebenbedingungen) eingeschränkt. Lagrange Multiplikatoren helfen, die Nebenbedingungen über eine weitere Unbekannte in die Gleichung einzubauen, sodass nur noch eine Gleichung zu lösen ist.
 
-Beispiel::
+*Beispiel*
+	::
 
-	f(x,y) Gleichung
-	g(x,y) = c Nebenbedingungen
+		f(x,y) Gleichung
+		g(x,y) = c Nebenbedingungen
+		
+		A(x,y,l) = f(x,y) + l*(g(x,y)-c)
+		l = Lagrangemultiplikator
 	
-	A(x,y,l) = f(x,y) + l*(g(x,y)-c)
-	l = Lagrangemultiplikator
+
+*Schiffbeispiel*
+	::
 	
-
-Schiffbeispiel::
-
 	      A       C
-	------*-------*--------          ------*-------*--------
-	       \     /                          \  a  /
-	        \   /                            ° - .
-	         \ /                              \ /
-	----------*------------          ----------*------------
-	          B
-	Vx Geschwindigkeit Schiff von A nach B
-	Vy Geschwindigkeit Schiff von B nach C
-	b Winkel bei b
-	sx, sy Streckenlänge
-	a Abstand der Schiffe
-	
-	v = s/t s = v*t
-	
-	svx = Vx*t
-	svy = Vy*t
-	
-	a^2 = (sx-svx)^2 + svy^2 - 2*(sx-svx)*svy*cos(b)
-	f(t) = (sx-Vx*t)^2 + (Vy*t)^2 - 2*(sx-Vx*t)*Vy*t*cos(b)
-	sx, sy, Vx, Vy und b einsetzen, Minimum auf Kurve bestimmen
+		------*-------*--------          ------*-------*--------
+		       \     /                          \  a  /
+		        \   /                            ° - .
+		         \ /                              \ /
+		----------*------------          ----------*------------
+		          B
+		Vx Geschwindigkeit Schiff von A nach B
+		Vy Geschwindigkeit Schiff von B nach C
+		b Winkel bei b
+		sx, sy Streckenlänge
+		a Abstand der Schiffe
+		
+		v = s/t s = v*t
+		
+		svx = Vx*t
+		svy = Vy*t
+		
+		a^2 = (sx-svx)^2 + svy^2 - 2*(sx-svx)*svy*cos(b)
+		f(t) = (sx-Vx*t)^2 + (Vy*t)^2 - 2*(sx-Vx*t)*Vy*t*cos(b)
+		sx, sy, Vx, Vy und b einsetzen, Minimum auf Kurve bestimmen
 	
 	
 17
@@ -232,8 +241,11 @@ Ein Gradient wird solange verändert, bis der Fehler der Gleichung am Minimum an
 
 20
 ..
-Die Nebenbedingungen werden in Gleichungen überführt. Die Haupt und Nebengleichungen werden in die Simplex-Tabelle eingetragen. Anschliessend wird mit Simplex Iterationen der Zielwert angenähert.
-	http://www.anginf.de/download/bwl/ibl/simplex.html
+Die Nebenbedingungen werden in Gleichungen überführt. 
+Die Haupt und Nebengleichungen werden in die Simplex-Tabelle eingetragen. 
+Anschliessend wird mit Simplex Iterationen der Zielwert angenähert.
+
+http://www.anginf.de/download/bwl/ibl/simplex.html
 	
 21
 ..
@@ -248,10 +260,10 @@ Nicht triviale Lösungsmengen sind unendlich grosse Lösungsmengen deren eine Fu
 
 23
 --
-	* Grundgerüst: Ein Dreieck mit drei Eckpunkten, die durch Zufall ausgewählt werden
-	* Gestartet wird an einem beliebigen Punkt
-	* In jeder Iteration wird vom aktuellen Punkt der halbe Weg bis zu einem zufälligen Eckpunkt des Dreiecks gegangen.
-	* Die Bewegung kommt nie zur Ruhe, wird jedoch immer Feiner
+* Grundgerüst: Ein Dreieck mit drei Eckpunkten, die durch Zufall ausgewählt werden
+* Gestartet wird an einem beliebigen Punkt
+* In jeder Iteration wird vom aktuellen Punkt der halbe Weg bis zu einem zufälligen Eckpunkt des Dreiecks gegangen.
+* Die Bewegung kommt nie zur Ruhe, wird jedoch immer Feiner
 	
 24
 --
@@ -284,10 +296,10 @@ Das Perzeptron ist das Mathematische Modell eines Neurons. Es Verknüpft die Ein
 
 28
 --
-	* Das Lernen funktioniert, in dem für die Eingabekanäle (Dendriten) optimale Gewichte gefunden werden.
-	* Ein Eingang wird gestärkt (Gewicht erhöht), falls der Eingabewert zum Feuern des Neurons geführt hat.
-	* Überwachtes Lernen: Dem Perzeptron wird von Aussen die Abweichung vom Idealwert mitgeteilt, das Neuron verändert anhand der Abweichung die Gewichte
-	* Selbstorganisierte Lernen: Das Perzeptron erhält einen Prototyp (Zielwert) und konvergiert selbst auf diesen zu.
+* Das Lernen funktioniert, in dem für die Eingabekanäle (Dendriten) optimale Gewichte gefunden werden.
+* Ein Eingang wird gestärkt (Gewicht erhöht), falls der Eingabewert zum Feuern des Neurons geführt hat.
+* Überwachtes Lernen: Dem Perzeptron wird von Aussen die Abweichung vom Idealwert mitgeteilt, das Neuron verändert anhand der Abweichung die Gewichte
+* Selbstorganisierte Lernen: Das Perzeptron erhält einen Prototyp (Zielwert) und konvergiert selbst auf diesen zu.
 	
 29
 --
@@ -319,15 +331,16 @@ Beschreibt, wie der Zellkörper auf Aufladungen reagiert. Beim Perzeptron wandel
 --
 Weil ein Perzeptron nur linear, d.h. an einer Stelle auf dem Zahlenstrahl, trennen kann. 
 	
-Beispiel::
+*Beispiel*
+	::
 
-	OR mit zwei Eingängen (Summe):
-	-1 0|1 2 3 4
-	Sobald der Summierte Wert 1 erreicht, ist mindestens ein Eingang 1
-	
-	XOR mit zwei Eingängen (Summe):
-	-1 0|1|2 3 4
-	Das Perzeptron müsste zweimal trennen, was es nicht kann.
+		OR mit zwei Eingängen (Summe):
+		-1 0|1 2 3 4
+		Sobald der Summierte Wert 1 erreicht, ist mindestens ein Eingang 1
+		
+		XOR mit zwei Eingängen (Summe):
+		-1 0|1|2 3 4
+		Das Perzeptron müsste zweimal trennen, was es nicht kann.
 	
 
 Werbos Perzeptron
@@ -336,20 +349,21 @@ Werbos Perzeptron
 
 Einfache Netze
 --------------
-Beispiel::
+*Beispiel*
+	::
 
-	     * Ausgabeschicht
-	    /|\
-	   *,*.* verborgene Schicht
-	  /,\ /.\
-	 // / \ \\
-	*´-´   `-`* Eingabeschicht
-	Alle Perzeptronen der verborgenen Schicht sind mit allen Ausgabeneuronen verbunden.
+		     * Ausgabeschicht
+		    /|\
+		   *,*.* verborgene Schicht
+		  /,\ /.\
+		 // / \ \\
+		*´-´   `-`* Eingabeschicht
+		Alle Perzeptronen der verborgenen Schicht sind mit allen Ausgabeneuronen verbunden.
+		
 	
-	
-1 verborgenen Schicht
+*1 verborgenen Schicht*
 	erlaubt konvexe Akzeptanzgebiete
-2 verborgene Schichten
+*2 verborgene Schichten*
 	erlauben das Kombinieren von mehreren Formen
 	
 
@@ -359,8 +373,9 @@ Imaginäre Gewichte
 34
 ..
 Holographische Perzeptronen arbeiten mit imaginären Gewichten. Vorteile: 
-	* grosse Speicherfähigkeit
-	* hohe Verarbeitungsgeschwindigkeit
+
+* grosse Speicherfähigkeit
+* hohe Verarbeitungsgeschwindigkeit
 	
 35
 ..
@@ -380,12 +395,13 @@ Kohonennetzwerke
 ..
 Kohonennetzwerke setzen auf das Prinzip, das Punkte die zu orten hinkonvergieren, andere Punkte beeinflussen.
 	
-Beispiel TSP
-	1) Städte als Punkte einzeichnen
-	2) Neuronen liegen zufällig als Perlenschnurkneuel da, es sind wesentlich mehr Neuronen als Städte vorhanden
-	3) Zufälliges Neuron zur nächsten Stadt ziehen
-	4) Die Nachbarneuronen werden wie an einem Gummifaden z.T. mitgezogen
-	5) Das Ziehen wird für alle Neuronen ein Paar Mal wiederholt
+**Beispiel TSP**
+
+1) Städte als Punkte einzeichnen
+2) Neuronen liegen zufällig als Perlenschnurkneuel da, es sind wesentlich mehr Neuronen als Städte vorhanden
+3) Zufälliges Neuron zur nächsten Stadt ziehen
+4) Die Nachbarneuronen werden wie an einem Gummifaden z.T. mitgezogen
+5) Das Ziehen wird für alle Neuronen ein Paar Mal wiederholt
 		
 38
 ..
@@ -439,8 +455,8 @@ Genetische Algorithmen
 	Übernehmen guter Elemente aus der alten Lösung
 *Fitness*
 	Die Fitnessfunktion ist eine Funktion mit extrem vielen lokalen Minima. Daher kommt man mit Gradientenabstieg nicht zum Ziel.
-	
-	Fitnessfunktion::
+*Fitnessfunktion*
+	::
 		
 		^
 		|                   ,-.
