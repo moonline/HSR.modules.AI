@@ -104,15 +104,16 @@ Eindimensionale Optimierungen
 	a) 
 		Vorgenen
 			Es wird eine Kurve erstellt mit Dunkelheit/Weg. Durch Gradientenabstieg wird der Ort der kleinsten Dunkelheit (kleinster Fehler) gefunden.
-		Skizze::
+		Skizze
+			::
 		
-			D.ht.^       ..-+-..
-			     |   .-'        '-.
-			     | .'              '.
-			     |'                  '
-			     +--------------------+-> Weg
-			     '          a         '
-			Kerze A                Kerze B
+				D.ht.^       ..-+-..
+					|   .-'        '-.
+					| .'              '.
+					|'                  '
+					+--------------------+-> Weg
+					'          a         '
+				Kerze A                Kerze B
 		
 		
 		Lösung
@@ -329,3 +330,15 @@ Monte Carlo
 42) Durch "Rütteln": Eine neue schlechtere Lösung wird mit einer kleinen Wahrscheinlichkeit trotzdem genommen -> Herausspringen aus lokalem Minima.
 
 
+Hopfield Netzwerk
+-----------------
+43) .. compound::
+	
+	Dem Hopfield Netzwerk werden Muster eingegeben, anhand deren die Gewichte gesetzt werden. Anschliessend kann das Hopfield Netzwerk neue Muster zu einem der Prototypen zuordnen. 
+	
+	* Das Hopfield Netzwerk lernt nicht im eigentlichen Sinne, Sondern konvergiert vom eingegebenen Muster zu einem passenden Prototypen.
+	* Beim Hopfield Netzwerk ist jedes Neuron mit jedem andern (ausser sich selbst) verbunden.
+	* Das Hopfield Netzwerk speichert nebst jedem eingegebenen Muster (Prototyp) auch dessen Inverse.
+	
+	
+44) Siehe 43
