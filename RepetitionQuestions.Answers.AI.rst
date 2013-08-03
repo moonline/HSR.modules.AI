@@ -498,3 +498,44 @@ Dabei werden die verfügbaren Operationen zufällig zusammengebaut. Durch Mutati
 * Die Qualität der Lösung muss numerisch bestimmbar sein und deren Fehler einer Fitnessfunktion folgen
 
 
+Clustering
+----------
+
+50
+..
+Datenmengen werden gruppiert (geclustert) anhand der Distanzen der Elemente zueinander.
+
+51
+..
+Um Konkave und Konvexe Trennungen zu ermöglichen, müssen die Punkte Punkt-zu-Punkt berechnet werden, und nicht Punkt-Gruppe.
+
+52
+..
+Clustering Verfahren, denen nicht die Anzahl Cluster vorgegeben wird. Ziel dieser Verfahren ist es, die Anzahl Cluster herauszufinden.
+
+53
+..
+* Es gibt bereits vorgegebene Cluster
+* Der Punkt wird zu dem Cluster addiert, dessen Mittelpunkt (Positionsmittelwert) ihm am nächsten liegt
+* Die Resultate sind nicht wiederholbar
+* Die Mittelpunkte der Cluster wandern während der Durchführung
+* K-Means Clustert nur gut, wenn die Menge gross verteilte Haufen sind. Mit komplexeren Formen kommt K-Means nicht zurecht.
+
+54
+..
+* Hirarchisches Bottom-Up Clustering
+* Startet mit mehreren Clusters, bestehend aus einem einzelnen Element
+* Die ähnlichsten Cluster werden zusammengelegt zu einem grösseren Cluster
+* Das Zusammenlegen wiederholt man auf der jeweils neuen Clustermenge bis nur noch wenige Cluster übrig sind
+* Die Ähnlichkeit von Clusters wird durch eine Matrix beschrieben, in der alle Distanzen zwischen allen Elementen aufgeführt sind.
+
+55
+..
+* Jedes Element besitzt einen Spin, eine Komponente die sich von der Position und der Umgebung ableitet.
+* Elemente werden anhand des Spins geclustert.
+* Durch Schüttelverfahren (wie bei Monte Carlo) werden die Cluster aufgebrochen, bis nur noch der stabilste übrig ist
+* Mit den andern Elementen werden erneut Cluster gebildet.
+
+
+
+
